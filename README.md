@@ -1,8 +1,8 @@
 ## Introduction
 
-This project is a windows-edition of [eigenmath](https://github.com/georgeweigt/eigenmath).
+This project is the windows-edition of [eigenmath](https://github.com/georgeweigt/eigenmath).
 
-If wanting to learn more about the original project and learn about how to use it, here is the original project and README.md.
+Want to learn more about the original project and learn about how to use it? Here is the original project and README.md.
 
 [georgeweigt/eigenmath: Symbolic math app (github.com)](https://github.com/georgeweigt/eigenmath)
 

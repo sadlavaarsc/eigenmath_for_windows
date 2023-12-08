@@ -1,11 +1,5 @@
 {
     cmdlines = {
-        [[xmake l c:\Users\sadla\.vscode\extensions\tboox.xmake-vscode-2.2.6\assets\update_intellisense.lua .vscode]],
-        "xmake check",
-        [[xmake l c:\Users\sadla\.vscode\extensions\tboox.xmake-vscode-2.2.6\assets\config.lua]],
-        [[xmake l c:\Users\sadla\.vscode\extensions\tboox.xmake-vscode-2.2.6\assets\update_intellisense.lua .vscode]],
         "xmake check"
-    }
-}dla\.vscode\extensions\tboox.xmake-vscode-2.2.6\assets\explorer.lua]]
     }
 }
