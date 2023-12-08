@@ -1,5 +1,10 @@
 {
     cmdlines = {
-        "xmake check"
+        "xmake check",
+        "xmake check",
+        "xmake ",
+        "xmake run",
+        "xmake ",
+        "xmake run"
     }
 }

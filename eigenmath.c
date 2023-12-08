@@ -10,6 +10,8 @@
 #include <errno.h>
 #include "win_defs.h"
 
+#define CMD_PROMPT "$ "
+
 #define STACKSIZE 100000 // evaluation stack
 #define FRAMESIZE 10000
 #define BLOCKSIZE 10000
@@ -16493,7 +16495,7 @@ run_stdin(void)
 {
 	static char inbuf[1000];
 	for (;;) {
-		fputs("? ", stdout);
+		fputs(CMD_PROMPT, stdout);
 		fflush(stdout);
 		fgets(inbuf, sizeof inbuf, stdin);
 		run(inbuf);
