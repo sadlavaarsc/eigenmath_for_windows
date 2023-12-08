@@ -3,11 +3,12 @@
 #include <stdint.h>
 #include <ctype.h>
 #include <fcntl.h>
-#include <unistd.h>
+#include "unistd.h"
 #include <string.h>
 #include <setjmp.h>
 #include <math.h>
 #include <errno.h>
+#include "win_defs.h"
 
 #define STACKSIZE 100000 // evaluation stack
 #define FRAMESIZE 10000
