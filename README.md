@@ -1,77 +1,32 @@
-[Eigenmath Home Page](https://georgeweigt.github.io)
+## Introduction
 
-#
+This project is a windows-edition of [eigenmath](https://github.com/georgeweigt/eigenmath).
 
-To build and run for Linux
+If wanting to learn more about the original project and learn about how to use it, here is the original project and README.md.
 
-```
-make
-./eigenmath
-```
+[georgeweigt/eigenmath: Symbolic math app (github.com)](https://github.com/georgeweigt/eigenmath)
 
-Press ctrl-C to exit.
+[Original README](./ORIGINAL_README.md)
 
-To run a script (example)
+## Change:
 
-```
-./eigenmath demo/spontaneous-emission
-```
+1. add simplified unistd.h for windows.
+2. add win_defs.h to fix some constant and type missing.
+3. simply adjust engenmath.c to include the newly-added files.
+4. add xmake.lua allowing to compile the project with [xmake](https://github.com/xmake-io/xmake).
 
-Result
+## How to build
 
-```
-Spontaneous emission rate for hydrogen state 2p
+You can compile the project with xmake easily just using the following command in Terminal:
 
-                   ┌       ┐ 
-                   │       │ 
-                   │  3 r  │ 
-       r cos(θ) exp│−╶────╴│ 
-                   │  2 a  │ 
-                   │     0 │ 
-                   └       ┘ 
-f   = ╶─────────────────────╴
- 21            1/2  4        
-            4 2    a  π      
-                    0        
-
-x   = 0
- 21    
-
-y   = 0
- 21    
-
-       128   1/2   
-z   = ╶───╴ 2    a 
- 21    243        0
-
-         32768   2
-r     = ╶─────╴ a 
- 21sq    59049   0
-
-Spontaneous emission rate
-
-                8 
-       6.2649×10  
-A   = ╶──────────╴
- 21      second   
-
-Mean interval
-
-          −9       
-1.59619×10   second
+```bash
+xmake
 ```
 
-Eigenmath uses UTF-8 encoding to display Greek letters and other symbols.
+If you use mingw or something else, you can simply use command like that:
 
-To run self tests
-
-```
-./eigenmath test/selftest1
-./eigenmath test/selftest2
+```bash
+gcc eigenmath.c -o eigemath.exe
 ```
 
-#
-
-Go to the `xcode` directory to build for macOS.
-
-See also directory `js` for a Javascript version.
+And you can also compile it with msvc by creating a new visual studio project or just using command. No further elabration.
