@@ -14,7 +14,7 @@ Want to learn more about the original project and learn about how to use it? Her
 2. add win_defs.h to fix some constant and type missing.
 3. simply adjust engenmath.c to include the newly-added files.
 4. add xmake.lua allowing to compile the project with [xmake](https://github.com/xmake-io/xmake).
-5. change default prompt from '?' to '$' (because when I first see it, I used to regarded is as a code error!) and also provide a macro to change the prompt.
+5. change default prompt from '?' to '$' (because when I first see it, I used to regarded it as a code error!) and also provide a macro to change the prompt.
 
 ## How to build
 
