@@ -3,12 +3,17 @@
 #include <stdint.h>
 #include <ctype.h>
 #include <fcntl.h>
-#include "unistd.h"
 #include <string.h>
 #include <setjmp.h>
 #include <math.h>
 #include <errno.h>
+
+#ifdef _MSC_VER
+#include "unistd.h"
 #include "win_defs.h"
+#else
+#include <unistd.h>
+#endif
 
 #define CMD_PROMPT "$ "
 
@@ -14957,23 +14962,23 @@ factor_int(int n)
 
 #define VAL1(p) ((int) car(p)->u.d)
 #define VAL2(p) ((int) cadr(p)->u.d)
-
+//修改符号的地方，原本直接移植会有成吨符号bug
 #define PLUS_SIGN '+'
-#define MINUS_SIGN 0xe28892
-#define MULTIPLY_SIGN 0xc397
-#define GREATEREQUAL 0xe289a5
-#define LESSEQUAL 0xe289a4
+#define MINUS_SIGN '-'
+#define MULTIPLY_SIGN '·'
+#define GREATEREQUAL '≥'
+#define LESSEQUAL '≤'
+//这里指的其实是分号的左半边和右半边(（改一下就懂了）
+#define BDLL '─' // BOX DRAW LIGHT LEFT
+#define BDLR '─' // BOX DRAW LIGHT RIGHT
 
-#define BDLL 0xe295b4 // BOX DRAW LIGHT LEFT
-#define BDLR 0xe295b6 // BOX DRAW LIGHT RIGHT
-
-#define BDLH 0xe29480 // BOX DRAW LIGHT HORIZONTAL
-#define BDLV 0xe29482 // BOX DRAW LIGHT VERTICAL
-
-#define BDLDAR 0xe2948c // BOX DRAW LIGHT DOWN AND RIGHT
-#define BDLDAL 0xe29490 // BOX DRAW LIGHT DOWN AND LEFT
-#define BDLUAR 0xe29494 // BOX DRAW LIGHT UP AND RIGHT
-#define BDLUAL 0xe29498 // BOX DRAW LIGHT UP AND LEFT
+#define BDLH '─' // BOX DRAW LIGHT HORIZONTAL
+#define BDLV '│' // BOX DRAW LIGHT VERTICAL
+//这四个方位疑似指的是buffer内的方位，所以和注释是反过来的
+#define BDLDAR '┌'// BOX DRAW LIGHT DOWN AND RIGHT
+#define BDLDAL '┐'// BOX DRAW LIGHT DOWN AND LEFT
+#define BDLUAR '└'// BOX DRAW LIGHT UP AND RIGHT
+#define BDLUAL '┘' // BOX DRAW LIGHT UP AND LEFT
 
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
