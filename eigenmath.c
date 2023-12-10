@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <ctype.h>
@@ -9,6 +9,7 @@
 #include <errno.h>
 
 #ifdef _MSC_VER
+#pragma execution_character_set("utf-8")
 #include "unistd.h"
 #include "win_defs.h"
 #else
@@ -14962,23 +14963,23 @@ factor_int(int n)
 
 #define VAL1(p) ((int) car(p)->u.d)
 #define VAL2(p) ((int) cadr(p)->u.d)
-//ÐÞ¸Ä·ûºÅµÄµØ·½£¬Ô­±¾Ö±½ÓÒÆÖ²»áÓÐ³É¶Ö·ûºÅbug
-#define PLUS_SIGN '+'
-#define MINUS_SIGN '-'
-#define MULTIPLY_SIGN '¡¤'
-#define GREATEREQUAL '¡Ý'
-#define LESSEQUAL '¡Ü'
-//ÕâÀïÖ¸µÄÆäÊµÊÇ·ÖºÅµÄ×ó°ë±ßºÍÓÒ°ë±ß(£¨¸ÄÒ»ÏÂ¾Í¶®ÁË£©
-#define BDLL '©¤' // BOX DRAW LIGHT LEFT
-#define BDLR '©¤' // BOX DRAW LIGHT RIGHT
 
-#define BDLH '©¤' // BOX DRAW LIGHT HORIZONTAL
-#define BDLV '©¦' // BOX DRAW LIGHT VERTICAL
-//ÕâËÄ¸ö·½Î»ÒÉËÆÖ¸µÄÊÇbufferÄÚµÄ·½Î»£¬ËùÒÔºÍ×¢ÊÍÊÇ·´¹ýÀ´µÄ
-#define BDLDAR '©°'// BOX DRAW LIGHT DOWN AND RIGHT
-#define BDLDAL '©´'// BOX DRAW LIGHT DOWN AND LEFT
-#define BDLUAR '©¸'// BOX DRAW LIGHT UP AND RIGHT
-#define BDLUAL '©¼' // BOX DRAW LIGHT UP AND LEFT
+#define PLUS_SIGN '+'
+#define MINUS_SIGN 0xe28892
+#define MULTIPLY_SIGN 0xc397
+#define GREATEREQUAL 0xe289a5
+#define LESSEQUAL 0xe289a4
+
+#define BDLL 0xe295b4 // BOX DRAW LIGHT LEFT
+#define BDLR 0xe295b6 // BOX DRAW LIGHT RIGHT
+
+#define BDLH 0xe29480 // BOX DRAW LIGHT HORIZONTAL
+#define BDLV 0xe29482 // BOX DRAW LIGHT VERTICAL
+
+#define BDLDAR 0xe2948c // BOX DRAW LIGHT DOWN AND RIGHT
+#define BDLDAL 0xe29490 // BOX DRAW LIGHT DOWN AND LEFT
+#define BDLUAR 0xe29494 // BOX DRAW LIGHT UP AND RIGHT
+#define BDLUAL 0xe29498 // BOX DRAW LIGHT UP AND LEFT
 
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
@@ -16475,6 +16476,7 @@ int outbuf_length;
 int
 main(int argc, char *argv[])
 {
+	SetConsoleOutputCP(65001);
 	int i;
 	for (i = 1; i < argc; i++)
 		run_infile(argv[i]);
