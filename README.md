@@ -8,6 +8,8 @@ Want to learn more about the original project and learn about how to use it? Her
 
 [Original README](./ORIGINAL_README.md)
 
+[A Chinese Document](https://jerkwin.github.io/2021/10/21/Eigenmath%E5%87%BD%E6%95%B0%E8%AF%B4%E6%98%8E/#absx-x%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%80%BC%E6%88%96%E5%90%91%E9%87%8Fx%E7%9A%84%E9%95%BF%E5%BA%A6)
+
 ## Change:
 
 1. add simplified unistd.h for windows.

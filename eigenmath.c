@@ -16476,7 +16476,10 @@ int outbuf_length;
 int
 main(int argc, char *argv[])
 {
+#if defined(_WIN32) || defined(WIN32)
+	//针对windows的代码页补充
 	SetConsoleOutputCP(65001);
+#endif
 	int i;
 	for (i = 1; i < argc; i++)
 		run_infile(argv[i]);

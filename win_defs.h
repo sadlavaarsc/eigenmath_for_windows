@@ -1,4 +1,4 @@
-//补充一系列丢失的常量
+﻿//补充一系列丢失的常量
 
 #define _USE_MATH_DEFINES
 #if defined(_USE_MATH_DEFINES) && !defined(_MATH_DEFINES_DEFINED)
@@ -18,5 +18,5 @@
 #define M_SQRT2    1.41421356237309504880
 #define M_SQRT1_2  0.707106781186547524401
 #endif  /* _USE_MATH_DEFINES */
-// 补充数据类型
+// 补充数据类型,msvc才需要
 typedef long long off_t;

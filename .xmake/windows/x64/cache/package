@@ -1,1 +1,12 @@
-{ }
+{
+    ["mingw-w64"] = {
+        envs = {
+            PATH = {
+                [[C:\Users\sadla\AppData\Local\.xmake\packages\m\mingw-w64\11.2.0\2766a55e1c7d4a5f9f8c683f9b80b8ad\bin]],
+                [[F:\Apps\mingw-w64\mingw64\bin]]
+            }
+        },
+        __enabled = true,
+        __requirestr = "mingw-w64"
+    }
+}
